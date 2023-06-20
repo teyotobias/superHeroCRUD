@@ -12,6 +12,13 @@
     <% superheros.forEach(function(s) { %>
       <tr>
         <td>
+            <form action="/superheros/<%= s.id %>?_method=DELETE"
+                method="POST"
+                class="delete-form"
+            >
+                <button type="submit">X</button>
+                
+            </form>
             <a href="/superheros/<%= s.id %>"><%= s.name %></a>
         </td>
       </tr>
@@ -19,4 +26,4 @@
   </tbody>
 </table>
 
-<%- include('../partials/header') %>
+<%- include('../partials/footer') %>

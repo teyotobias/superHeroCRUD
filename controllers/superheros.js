@@ -1,10 +1,18 @@
 const Superhero = require('../models/superhero');
 
 module.exports = {
+    index,
+    show,
     new: newSuperhero,
     create,
-    index,
     delete: deleteSuperhero
+}
+
+async function show(req, res) {
+    const selectedSuper = await Superhero.findById(req.params.id);
+    res.render('superheros/show', {
+        superhero: selectedSuper
+    });
 }
 
 
@@ -29,10 +37,17 @@ async function create(req, res) {
     }
 }
 
-function deleteSuperhero(req,res) {
-    Superhero.findByIdAndDelete(req.params.id, function(err, superhero) {
-        if(err) return res.redirect('/superheros');
-        console.log(superhero);
-        res.redirect('/superheros');
-    });
+async function deleteSuperhero(req,res) {
+    try {
+        const superhero = await Superhero.findByIdAndDelete(req.params.id);
+        if(!superhero) {
+            return res.status(404).send('No superhero found with this id');
+        } else {
+            console.log(superhero);
+            return res.redirect('/superheros');
+        }
+    } catch(err) {
+        console.log(err);
+        return res.status(500).send('Server error');
+    }
 }

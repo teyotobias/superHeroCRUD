@@ -17,6 +17,10 @@ router.post('/', superheroCtrl.create);
 
 router.delete('/:id', superheroCtrl.delete);
 
+//edit
+
+//update
+
 
 //update
 // show
