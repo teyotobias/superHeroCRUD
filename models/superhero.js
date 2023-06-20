@@ -17,5 +17,6 @@ const superheroSchema = new mongoose.Schema({
         min: 0,
         max: 100
     }
+
   });
 module.exports = mongoose.model('Superhero', superheroSchema);

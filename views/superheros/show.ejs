@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Ability</th>
+      <th>Nemesis</th>
+      <th>Strength</th>
+      <th>Now Showing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Write the line of EJS to iterate over movies using forEach -->
+    <tr>
+        <td><%= superhero.name %></td>
+        <td><%= superhero.ability %></td>
+        <td><%= superhero.nemesis %></td>
+        <td><%= superhero.strengthLevel %></td>
+    </tr>
+  </tbody>
+</table>
+
+<%- include('../partials/header') %>

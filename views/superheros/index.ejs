@@ -5,22 +5,15 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Ability</th>
-      <th>Nemesis</th>
-      <th>Strength</th>
-      <th>Now Showing</th>
     </tr>
   </thead>
   <tbody>
     <!-- Write the line of EJS to iterate over movies using forEach -->
     <% superheros.forEach(function(s) { %>
-
-    
       <tr>
-        <td><%= s.name %></td>
-        <td><%= s.ability %></td>
-        <td><%= s.nemesis %></td>
-        <td><%= s.strengthLevel %></td>
+        <td>
+            <a href="/superheros/<%= s.id %>"><%= s.name %></a>
+        </td>
       </tr>
     <% }) %><!-- Close the forEach using EJS here -->
   </tbody>

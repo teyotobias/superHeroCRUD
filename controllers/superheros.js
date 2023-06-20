@@ -3,7 +3,8 @@ const Superhero = require('../models/superhero');
 module.exports = {
     new: newSuperhero,
     create,
-    index
+    index,
+    delete: deleteSuperhero
 }
 
 
@@ -26,4 +27,12 @@ async function create(req, res) {
     catch (err) {
         res.render('superheros/new', {errorMsg: err.message});
     }
+}
+
+function deleteSuperhero(req,res) {
+    Superhero.findByIdAndDelete(req.params.id, function(err, superhero) {
+        if(err) return res.redirect('/superheros');
+        console.log(superhero);
+        res.redirect('/superheros');
+    });
 }

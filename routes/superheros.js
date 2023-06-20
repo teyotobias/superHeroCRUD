@@ -6,11 +6,20 @@ const superheroCtrl = require('../controllers/superheros');
 // GET for /superheros
 router.get('/', superheroCtrl.index)
 
+// GET route for /new
+router.get('/new', superheroCtrl.new);
+
+router.get('/:id', superheroCtrl.show);
+
 //POST route for/superheros
 router.post('/', superheroCtrl.create);
 
-// GET route for /new
-router.get('/new', superheroCtrl.new);
+
+router.delete('/:id', superheroCtrl.delete);
+
+
+//update
+// show
 
 
 module.exports = router;
