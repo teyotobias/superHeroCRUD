@@ -11,11 +11,16 @@ router.get('/new', superheroCtrl.new);
 
 router.get('/:id', superheroCtrl.show);
 
+
+router.get('/:id/edit', superheroCtrl.edit);
+
 //POST route for/superheros
 router.post('/', superheroCtrl.create);
 
 
 router.delete('/:id', superheroCtrl.delete);
+
+// router.put('/:id', superheroCtrl.update);
 
 //edit
 

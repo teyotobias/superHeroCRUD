@@ -5,7 +5,16 @@ module.exports = {
     show,
     new: newSuperhero,
     create,
-    delete: deleteSuperhero
+    delete: deleteSuperhero,
+    edit,
+}
+
+async function edit(req,res) {
+    const superhero = await Superhero.findById(req.params.id);
+    res.render('superheros/edit', {
+        title: 'Edit-To-Do',
+        superhero
+    });
 }
 
 async function show(req, res) {
@@ -51,3 +60,4 @@ async function deleteSuperhero(req,res) {
         return res.status(500).send('Server error');
     }
 }
+

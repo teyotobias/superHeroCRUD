@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+<p>
+
+    
+
+</p>
+
+<form action="/superheros/<%= superhero.id %>?_method=PUT" method="POST">
+    <input type="text" name="Superhero" value="<%= superhero.name %>">
+    <input type="text" name="Ability" value="<%= superhero.ability %>">
+    <input type="text" name="Nemesis" value="<%= superhero.nemesis %>">
+    <input type="text" name="Strength Level (0-100)" value="<%= superhero.strengthLevel %>">
+    <button type="submit">Update SuperHero</button>  
+</form>
+
+<%- include('../partials/footer') %>
