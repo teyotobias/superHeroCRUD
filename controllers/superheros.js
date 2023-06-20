@@ -7,6 +7,23 @@ module.exports = {
     create,
     delete: deleteSuperhero,
     edit,
+    update
+}
+
+async function update(req, res) {
+    try {
+        const selectedSuperHero = await Superhero.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        if (!selectedSuperHero) {
+            return res.status(404).send('No superhero found with this id');
+        } else {
+            console.log(selectedSuperHero);
+            return res.redirect(`/superheros/${selectedSuperHero.id}`);
+        }
+    } catch(arr) {
+        console.log(err);
+        return res.status(500).send('Server error');
+    }
+
 }
 
 async function edit(req,res) {

@@ -20,7 +20,7 @@ router.post('/', superheroCtrl.create);
 
 router.delete('/:id', superheroCtrl.delete);
 
-// router.put('/:id', superheroCtrl.update);
+router.put('/:id', superheroCtrl.update);
 
 //edit
 

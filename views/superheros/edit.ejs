@@ -1,16 +1,26 @@
 <%- include('../partials/header') %>
-<p>
 
-    
-
-</p>
-
-<form action="/superheros/<%= superhero.id %>?_method=PUT" method="POST">
-    <input type="text" name="Superhero" value="<%= superhero.name %>">
+<!-- <form action="/superheros/<%= superhero.id %>?_method=PUT" method="POST">
+    <label for="Superhero">Superhero:</label>
+    <input type="text" name="name" value="<%= superhero.name %>">
+    <label for="Ability">Ability:</label>
     <input type="text" name="Ability" value="<%= superhero.ability %>">
+    <label for="Nemesis">Nemesis:</label>
     <input type="text" name="Nemesis" value="<%= superhero.nemesis %>">
+    <label for="Strength Level">Strength Level (0-100)</label>
     <input type="text" name="Strength Level (0-100)" value="<%= superhero.strengthLevel %>">
     <button type="submit">Update SuperHero</button>  
+</form> -->
+<form action="/superheros/<%= superhero.id %>?_method=PUT" method="POST">
+    <label for="name">Superhero:</label>
+    <input type="text" id="name" name="name" value="<%= superhero.name %>">
+    <label for="ability">Ability:</label>
+    <input type="text" id="ability" name="ability" value="<%= superhero.ability %>">
+    <label for="nemesis">Nemesis:</label>
+    <input type="text" id="nemesis" name="nemesis" value="<%= superhero.nemesis %>">
+    <label for="strengthLevel">Strength Level (0-100):</label>
+    <input type="text" id="strengthLevel" name="strengthLevel" value="<%= superhero.strengthLevel %>">
+    <button type="submit">Update SuperHero</button>
 </form>
 
 <%- include('../partials/footer') %>
